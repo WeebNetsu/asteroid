@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asteroid</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="../../../src/BlogImg.jpg">
+</head>
+<body style="background: #111;">
+	<style type="text/css">
+		h1{
+			position: relative;
+			font-size: 10em;
+			font-family: monospace, sans-serif;
+			opacity: 0.8;
+			color: gray;
+		}
+
+		div{
+			font-weight: bold;
+			color: lightgray;
+			font-size: 1.2em;
+			position: relative;
+			left: 47%;
+			width: 400px;
+		}
+
+		input:hover{
+			cursor: pointer;
+		}
+
+		button{
+			border-radius: 20px;
+			width: 100px;
+			height: 30px;
+		}
+
+		button:hover{
+			cursor: pointer;
+		}
+
+		section{
+			position: absolute;
+			top: 30px;
+			left: 150px;
+			display: block;
+		}
+	</style>
+
+	<h1 align="center">Asteroid</h1>
+
+	<div>
+		<input type="radio" name="level" checked id="veryEasy">Very Easy<br>
+		<input type="radio" name="level" id="easy">Easy<br>
+		<input type="radio" name="level" checked id="normal">Normal<br>
+		<input type="radio" name="level" id="hard">Hard<br>
+		<input type="radio" name="level" id="impossible">Impossible<br>
+		<br>
+		<a href="#" onclick="selectLevel()" id="game"><button>PLAY</button></a>
+		<br>
+		<section>
+			Move:<br>
+			Forward: W or ↑<br>
+			Left: A or ←<br>
+			Right: D or →<br>
+			Back: S or ↓ <sub>(Easy mode)</sub><br>
+			<br>
+			Shoot: (SPACE BAR)
+		</section>
+	</div>
+
+	<script type="text/javascript">
+		var veryEasy = document.getElementById("veryEasy");
+		var easy = document.getElementById("easy");
+		var normal = document.getElementById("normal");
+		var hard = document.getElementById("hard");
+		var impossible = document.getElementById("impossible");
+		var link = document.getElementById("game");
+
+		function selectLevel(){
+			if(normal.checked == true){
+				link.href = "Normal/astroidNormal.html";
+			}else if(hard.checked == true){
+				link.href = "Hard/astroidHard.html";
+			}else if(impossible.checked == true){
+				link.href = "Impossible/astroidImpossible.html";
+			}else if(veryEasy.checked == true){
+				link.href = "veryEasy/astroidVeryEasy.html";
+			}else if(easy.checked == true){
+				link.href = "Easy/astroidEasy.html";
+			}
+		}
+	</script>
+
+</body>
+</html>
